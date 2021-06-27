@@ -8,11 +8,11 @@ export default {
     },
   },
   mutations: {
-    updateUsers(state, users) {
-      state.users = users;
-    },
     addUser(state, newUser) {
       state.users.unshift(newUser);
+    },
+    updateUsers(state, users) {
+      state.users = users;
     },
   },
   state: {

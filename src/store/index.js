@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import userList from './modules/userList.js';
 import userForm from './modules/userForm.js';
+import userList from './modules/userList.js';
 
 Vue.use(Vuex);
 
