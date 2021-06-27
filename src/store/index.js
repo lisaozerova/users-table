@@ -1,12 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import users from './modules/users.js';
+import userList from './modules/userList.js';
+import userForm from './modules/userForm.js';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    users,
+    userForm,
+    userList,
   },
 });

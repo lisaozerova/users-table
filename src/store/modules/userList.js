@@ -22,7 +22,7 @@ export default {
     allUsers(state) {
       return state.users;
     },
-    usersAmount(state, getters) {
+    usersAmount(_, getters) {
       return getters.allUsers.length;
     },
   },

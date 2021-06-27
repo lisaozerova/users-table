@@ -3,8 +3,8 @@
     <div class="container">
       <input type="text" placeholder="Name, required" v-model="name">
       <input type="text" placeholder="Username, required" v-model="username">
-      <input type="text" placeholder="Company, required" v-model="company.name">
-      <input type="text" placeholder="Specialization, required" v-model="company.bs">
+      <input type="text" placeholder="Company, required" v-model="companyName">
+      <input type="text" placeholder="Specialization, required" v-model="bs">
     </div>
 
     <button type="submit">Add</button>
@@ -12,46 +12,65 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapActions, mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'UserForm',
-  data() {
-    return {
-      name: '',
-      username: '',
-      company: {
-        bs: '',
-        name: '',
+  computed: {
+    ...mapGetters(['fields', 'validate']),
+    name: {
+      get() {
+        return this.fields.name;
       },
-    }
+      set(value) {
+        this.updateName(value);
+      }
+    },
+    username: {
+      get() {
+        return this.fields.username;
+      },
+      set(value) {
+        this.updateUsername(value);
+      }
+    },
+    companyName: {
+      get() {
+        return this.fields.companyName;
+      },
+      set(value) {
+        this.updateCompanyName(value);
+      }
+    },
+    bs: {
+      get() {
+        return this.fields.bs;
+      },
+      set(value) {
+        this.updateSpecialization(value);
+      }
+    },
   },
   methods: {
-    ...mapMutations(['addUser']),
-
-    validate() {
-      return this.name && this.username && this.company.name && this.company.bs;
-    },
+    ...mapActions(['resetForm']),
+    ...mapMutations(['addUser', 'updateName', 'updateUsername', 'updateCompanyName', 'updateSpecialization']),
 
     submit() {
-      if (!this.validate()) {
+      if (!this.validate) {
         return;
       }
 
       this.addUser({
         id: Date.now(),
-        name: this.name,
-        username: this.username,
+        name: this.fields.name,
+        username: this.fields.username,
         company: {
-          name: this.company.name,
-          bs: this.company.bs,
+          name: this.fields.companyName,
+          bs: this.fields.bs,
         },
       });
 
-      this.name = '';
-      this.username = '';
-      this.company.name = '';
-      this.company.bs = '';
+      this.resetForm();
     }
   }
 }
