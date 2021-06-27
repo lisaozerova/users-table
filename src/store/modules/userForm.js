@@ -10,13 +10,8 @@ const getDefaultState = () => {
 const state = getDefaultState();
 
 export default {
-  actions: {
-    resetForm ({ commit }) {
-      commit('resetState');
-    },
-  },
   mutations: {
-    resetState(state) {
+    resetForm(state) {
       Object.assign(state, getDefaultState());
     },
     updateName(state, name) {

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'UserForm',
@@ -52,8 +52,14 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['resetForm']),
-    ...mapMutations(['addUser', 'updateName', 'updateUsername', 'updateCompanyName', 'updateSpecialization']),
+    ...mapMutations([
+      'addUser',
+      'resetForm',
+      'updateName',
+      'updateUsername',
+      'updateCompanyName',
+      'updateSpecialization',
+    ]),
 
     submit() {
       if (!this.validate) {
