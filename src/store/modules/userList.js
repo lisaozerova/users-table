@@ -11,6 +11,7 @@ export default {
     addUser(state, newUser) {
       state.users.unshift(newUser);
     },
+
     updateUsers(state, users) {
       state.users = users;
     },
@@ -22,6 +23,7 @@ export default {
     allUsers(state) {
       return state.users;
     },
+
     usersAmount(_, getters) {
       return getters.allUsers.length;
     },

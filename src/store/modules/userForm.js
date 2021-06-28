@@ -14,15 +14,19 @@ export default {
     resetForm(state) {
       Object.assign(state, getDefaultState());
     },
+
     updateName(state, name) {
       state.name = name;
     },
+
     updateUsername(state, username) {
       state.username = username;
     },
+
     updateCompanyName(state, companyName) {
       state.companyName = companyName;
     },
+
     updateSpecialization(state, specialization) {
       state.bs = specialization;
     },

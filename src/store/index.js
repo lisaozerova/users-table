@@ -11,4 +11,5 @@ export default new Vuex.Store({
     userForm,
     userList,
   },
+  strict: process.env.NODE_ENV !== 'production',
 });
