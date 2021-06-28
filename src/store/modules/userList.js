@@ -19,11 +19,7 @@ export default {
     },
   },
   getters: {
-    allUsers(state) {
-      return state.users;
-    },
-    usersAmount(_, getters) {
-      return getters.allUsers.length;
-    },
+    allUsers: state => state.users,
+    usersAmount: (_, getters) => getters.allUsers.length,
   },
 };

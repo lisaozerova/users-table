@@ -29,8 +29,6 @@ export default {
     },
   },
   getters: {
-    fields(state) {
-      return state;
-    },
+    fields: state => state,
   },
 };
