@@ -24,34 +24,31 @@ export default {
         return this.fields.name;
       },
       set(value) {
-        this.updateName(value);
+        this.updateField({ name: value });
       }
     },
-
     username: {
       get() {
         return this.fields.username;
       },
       set(value) {
-        this.updateUsername(value);
+        this.updateField({ username: value });
       }
     },
-
     companyName: {
       get() {
         return this.fields.companyName;
       },
       set(value) {
-        this.updateCompanyName(value);
+        this.updateField({ companyName: value });
       }
     },
-
     specialization: {
       get() {
         return this.fields.specialization;
       },
       set(value) {
-        this.updateSpecialization(value);
+        this.updateField({ specialization: value });
       }
     },
   },
@@ -59,10 +56,7 @@ export default {
     ...mapMutations([
       'addUser',
       'resetForm',
-      'updateName',
-      'updateUsername',
-      'updateCompanyName',
-      'updateSpecialization',
+      'updateField',
     ]),
 
     validate() {

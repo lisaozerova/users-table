@@ -15,17 +15,9 @@ export default {
     resetForm(state) {
       Object.assign(state, getDefaultState());
     },
-    updateName(state, name) {
-      state.name = name;
-    },
-    updateUsername(state, username) {
-      state.username = username;
-    },
-    updateCompanyName(state, companyName) {
-      state.companyName = companyName;
-    },
-    updateSpecialization(state, specialization) {
-      state.specialization = specialization;
+    updateField(state, payload) {
+      const field = Object.keys(payload)[0];
+      state[field] = payload[field];
     },
   },
   getters: {
