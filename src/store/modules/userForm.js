@@ -3,7 +3,7 @@ const getDefaultState = () => {
     name: '',
     username: '',
     companyName: '',
-    bs: '',
+    specialization: '',
   }
 };
 
@@ -28,7 +28,7 @@ export default {
     },
 
     updateSpecialization(state, specialization) {
-      state.bs = specialization;
+      state.specialization = specialization;
     },
   },
   state,

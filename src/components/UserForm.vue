@@ -4,7 +4,7 @@
       <input type="text" placeholder="Name, required" v-model="name">
       <input type="text" placeholder="Username, required" v-model="username">
       <input type="text" placeholder="Company, required" v-model="companyName">
-      <input type="text" placeholder="Specialization, required" v-model="bs">
+      <input type="text" placeholder="Specialization, required" v-model="specialization">
     </div>
 
     <button type="submit">Add</button>
@@ -46,9 +46,9 @@ export default {
       }
     },
 
-    bs: {
+    specialization: {
       get() {
-        return this.fields.bs;
+        return this.fields.specialization;
       },
       set(value) {
         this.updateSpecialization(value);
@@ -80,7 +80,7 @@ export default {
         username: this.fields.username,
         company: {
           name: this.fields.companyName,
-          bs: this.fields.bs,
+          bs: this.fields.specialization,
         },
       });
 
