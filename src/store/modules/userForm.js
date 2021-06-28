@@ -32,8 +32,5 @@ export default {
     fields(state) {
       return state;
     },
-    validate(_, getters) {
-      return Object.values(getters.fields).every(field => field !== '');
-    },
   },
 };

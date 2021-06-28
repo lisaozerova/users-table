@@ -17,7 +17,8 @@ import { mapGetters, mapMutations } from 'vuex';
 export default {
   name: 'UserForm',
   computed: {
-    ...mapGetters(['fields', 'validate']),
+    ...mapGetters(['fields']),
+
     name: {
       get() {
         return this.fields.name;
@@ -26,6 +27,7 @@ export default {
         this.updateName(value);
       }
     },
+
     username: {
       get() {
         return this.fields.username;
@@ -34,6 +36,7 @@ export default {
         this.updateUsername(value);
       }
     },
+
     companyName: {
       get() {
         return this.fields.companyName;
@@ -42,6 +45,7 @@ export default {
         this.updateCompanyName(value);
       }
     },
+
     bs: {
       get() {
         return this.fields.bs;
@@ -61,8 +65,12 @@ export default {
       'updateSpecialization',
     ]),
 
+    validate() {
+      return Object.values(this.fields).every(field => field.trim() !== '');
+    },
+
     submit() {
-      if (!this.validate) {
+      if (!this.validate()) {
         return;
       }
 
