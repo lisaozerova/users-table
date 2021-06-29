@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h1>User List</h1>
+    <h1>Hi, Michail!</h1>
+    <h2>This is User List.</h2>
 
     <UserForm />
     <UserList />
@@ -43,6 +44,10 @@ body {
 
 h1 {
   margin-top: 0;
+}
+
+h2 {
+  margin-bottom: 40px;
 }
 
 @keyframes gradient {
